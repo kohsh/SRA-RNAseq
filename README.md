@@ -26,7 +26,9 @@ using the [Workflow Description Language (WDL)](https://github.com/openwdl/wdl) 
 * Install [SRAtoolkit](http://www.sthda.com/english/wiki/install-sra-toolkit)
 * Run the following command to download SRA fastq files in parallel. The list.txt includes SRA ids. 
 
-`parallel --jobs n "fastq-dump --split-files --skip-technical -B --gzip {}" :::: list.txt`
+```bash
+parallel --jobs n "fastq-dump --split-files --skip-technical -B --gzip {}" :::: list.txt
+```
 
 
 #### Running Trim-QC & Kallisto pipeline in WDL format
@@ -35,8 +37,9 @@ using the [Workflow Description Language (WDL)](https://github.com/openwdl/wdl) 
 * For running Kallisto.wdl you also need to build an **index** from a FASTA formatted file of target sequences using [Kallisto](https://github.com/pachterlab/kallisto) and name it under **gencode.idx**. 
 * Run the workflow directly by executing the following commands on your terminal:
 
-`java -Dconfig.file=application.conf -jar cromwell-55.jar run Trim-QC.wdl -i Trim-QC.json` 
-
-`java -Dconfig.file=application.conf -jar cromwell-55.jar run Kallisto.wdl -i Kallisto.json` 
+```bash
+java -Dconfig.file=application.conf -jar cromwell-55.jar run Trim-QC.wdl -i Trim-QC.json
+java -Dconfig.file=application.conf -jar cromwell-55.jar run Kallisto.wdl -i Kallisto.json
+```
  
  
