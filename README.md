@@ -39,6 +39,8 @@ parallel --jobs n "fastq-dump --split-files --skip-technical -B --gzip {}" :::: 
 
 ```bash
 java -Dconfig.file=application.conf -jar cromwell-55.jar run Trim-QC.wdl -i Trim-QC.json
+```
+```bash
 java -Dconfig.file=application.conf -jar cromwell-55.jar run Kallisto.wdl -i Kallisto.json
 ```
  
